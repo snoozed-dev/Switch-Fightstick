@@ -181,16 +181,16 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 	switch (state)
 	{
 		case SYNC_CONTROLLER:
-			if (report_count > 100)
+			if (report_count > 200)
 			{
 				report_count = 0;
 				state = SYNC_POSITION;
 			}
-			else if (report_count == 25 || report_count == 50)
+			else if (report_count == 50 || report_count == 100)
 			{
 				ReportData->Button |= SWITCH_L | SWITCH_R;
 			}
-			else if (report_count == 75 || report_count == 100)
+			else if (report_count == 150 || report_count == 200)
 			{
 				ReportData->Button |= SWITCH_A;
 			}
@@ -212,8 +212,10 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 			}
 			if (report_count == 75 || report_count == 150)
 			{
+				// Select thinnest brush
+				ReportData->Button |= SWITCH_L;
 				// Clear the screen
-				ReportData->Button |= SWITCH_MINUS;
+				ReportData->Button |= SWITCH_LCLICK;
 			}
 			report_count++;
 			break;
