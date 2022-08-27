@@ -1,3 +1,12 @@
+# Fork of shinyquagsire23's fork for Splatoon 3
+
+### These are the changes I've made:
+- Modified keys used for Splatoon 3 compatibility
+- Extended initialization delay because it wouldn't successfully get past the controller confirmation screen for me
+- Made the script manually select the thinnest brush because it sometimes wouldn't end up with it selected
+- Slightly modified the python image script so that it can run with python 3 
+
+
 ## Switch-Fightstick
 Proof-of-Concept Fightstick for the Nintendo Switch
 
